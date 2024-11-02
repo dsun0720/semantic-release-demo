@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "semantic-release-demo"
+version = "0.0.0"
+description = ""
+authors = ["dian.sun <aj1044195@tdf.hubtotal.net>"]
+readme = "README.md"
+packages = [{include = "demo"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+python-semantic-release = '^7.32.2'
+
+[tool.semantic_release]
+branch = 'main'
+changelog_file = 'CHANGELOG.md'
+upload_to_repository = false
+version_toml = 'pyproject.toml:tool.poetry.version'
+
+[semantic_release.remote]
+token = { env = "GH_TOKEN" }
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
