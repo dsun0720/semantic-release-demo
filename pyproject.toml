@@ -10,14 +10,13 @@ packages = [{include = "demo"}]
 python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
-python-semantic-release = '^7.32.2'
+python-semantic-release = '7.32.2'
 
 [tool.semantic_release]
 branch = 'main'
 changelog_file = 'CHANGELOG.md'
-patch_without_tag = true
 upload_to_pypi = false
-upload_to_realease = false
+upload_to_release = true
 version_source = 'commit'
 version_toml = 'pyproject.toml:tool.poetry.version'
 
