@@ -9,21 +9,11 @@ packages = [{include = "demo"}]
 [tool.poetry.dependencies]
 python = "^3.9"
 
-[tool.poetry.group.dev.dependencies]
-python-semantic-release = '^7.32.2'
-
 [tool.semantic_release]
 branch = 'main'
 changelog_file = 'CHANGELOG.md'
-upload_to_pypi = false
-upload_to_release = false
-version_source = 'commit'
-version_toml = 'pyproject.toml:tool.poetry.version'
-
-[semantic_release.remote]
-token = { env = "GH_TOKEN" }
-
-
+upload_to_vcs_release=false
+version_toml = ["pyproject.toml:tool.poetry.version"]
 
 [build-system]
 requires = ["poetry-core"]

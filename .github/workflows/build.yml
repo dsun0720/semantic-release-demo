@@ -3,12 +3,12 @@ on:
   workflow_call:
   workflow_dispatch:
   pull_request:
-    types: [ opened, synchronize]
-    branches: [ main ]
+    types: [opened, synchronize]
+    branches: [main]
   push:
     branches: [main]
     paths-ignore:
-      - '**.md'
+      - "**.md"
 
 jobs:
   test-versioning:
@@ -22,45 +22,22 @@ jobs:
       max-parallel: 1
 
     steps:
-    - name: Generate token for GitHub App
-      id: generate-token
-      uses: getsentry/action-github-app-token@v2
-      with:
-        app_id: ${{ secrets.GH_APP_CLIENT_ID }}
-        private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+      - name: Generate token for GitHub App
+        id: generate-token
+        uses: getsentry/action-github-app-token@v2
+        with:
+          app_id: ${{ secrets.GH_APP_CLIENT_ID }}
+          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        token: ${{ steps.generate-token.outputs.token }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.generate-token.outputs.token }}
 
-    - name: Setup python
-      id: setup-python
-      uses: actions/setup-python@v4.5.0
-      with:
-        python-version: ${{ matrix.python-version }}
-        architecture: x64
-
-    - name: Install Peotry
-      run: curl -sSL https://install.python-poetry.org/ | python -
-
-    - name: Add Poetry to PATH
-      shell: bash
-      run: |
-        export PATH="$HOME/.poetry/bin:$PATH"
-
-    - name: set PY
-      run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
-
-    - name: Install dependencies
-      run: poetry install
-
-    - name: Python Semantic Release
-      if: github.ref_name == 'main' && github.event_name == 'push'
-      env:
-        GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-      run: |
-        git config user.name "${GITHUB_ACTOR}"
-        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        poetry run semantic-release publish -v DEBUG
+      - name: Python Semantic Release
+        id: release
+        if: github.ref_name == 'main' && github.event_name == 'push'
+        uses: python-semantic-release/python-semantic-release@v8.7.0
+        with:
+          github_token: ${{ steps.generate-token.outputs.token }}
