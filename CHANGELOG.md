@@ -2,6 +2,13 @@
 
 
 
+## v0.3.2 (2024-11-04)
+
+### Fix
+
+* fix: add artifects to github release ([`c7092dd`](https://github.com/dsun0720/semantic-release-demo/commit/c7092dd13d28017a8bcbe97949c538e20ba4b4bd))
+
+
 ## v0.3.1 (2024-11-04)
 
 ### Fix
