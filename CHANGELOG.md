@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2024-11-04)
+
+### Fix
+
+* Test without release and build_command ([`8aba941`](https://github.com/dsun0720/semantic-release-demo/commit/8aba941a506e7b79ac61d6d503c3949dad3c13e1))
+
 ## v0.2.0 (2024-11-04)
 
 ### Feature
