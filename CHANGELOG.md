@@ -2,6 +2,13 @@
 
 
 
+## v0.3.1 (2024-11-04)
+
+### Fix
+
+* fix: use version_variables ([`4f4c200`](https://github.com/dsun0720/semantic-release-demo/commit/4f4c200e2547197defa11bb986d15618d12acd9c))
+
+
 ## v0.3.0 (2024-11-04)
 
 ### Feature
