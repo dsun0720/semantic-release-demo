@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "semantic-release-demo"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["dian.sun <aj1044195@tdf.hubtotal.net>"]
 readme = "README.md"

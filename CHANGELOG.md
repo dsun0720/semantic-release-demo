@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.2 (2024-11-04)
+### Fix
+* Upload poetry lock ([`b4b9bc3`](https://github.com/dsun0720/semantic-release-demo/commit/b4b9bc3f27be2d4d19cc2b4805dc8c90d0a2cb2a))
+* Semantic release configuration 2 ([`5454424`](https://github.com/dsun0720/semantic-release-demo/commit/545442423732ba02b52a6043dc7ffe9bef1ac937))
+
 ## v0.1.1 (2024-11-04)
 
 ### Fix
