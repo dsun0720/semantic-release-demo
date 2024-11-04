@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.1 (2024-11-04)
+
+### Fix
+
+* Semantic release configuration ([`4390939`](https://github.com/dsun0720/semantic-release-demo/commit/439093946c84407925ee738bc9d6e0a6ca25cf5d))
+
 ## v0.1.0 (2024-11-02)
 
 ### Feature
