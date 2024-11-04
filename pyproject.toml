@@ -12,11 +12,12 @@ python = "^3.9"
 [tool.semantic_release]
 branch = 'main'
 changelog_file = 'CHANGELOG.md'
-upload_to_vcs_release=false
+upload_to_vcs_release=true
 version_variables = [
     "demo/__init__.py:__version__",
     "pyproject.toml:tool.poetry.version",
 ]
+build_command = "pip install poetry && poetry build"
 
 [build-system]
 requires = ["poetry-core"]
