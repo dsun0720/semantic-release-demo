@@ -57,8 +57,11 @@ jobs:
         run: poetry install
 
       - name: Python Semantic Release
-        id: release
         if: github.ref_name == 'main' && github.event_name == 'push'
-        uses: python-semantic-release/python-semantic-release@v8.7.0
-        with:
-          github_token: ${{ steps.generate-token.outputs.token }}
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: |
+          pip install python-semantic-release==8.7.0
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          poetry run semantic-release publish -v DEBUG
