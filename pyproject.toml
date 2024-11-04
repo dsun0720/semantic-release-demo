@@ -19,6 +19,7 @@ upload_to_pypi = false
 upload_to_release = true
 version_source = 'commit'
 version_toml = 'pyproject.toml:tool.poetry.version'
+build_command = "poetry build"
 
 [semantic_release.remote]
 token = { env = "GH_TOKEN" }
