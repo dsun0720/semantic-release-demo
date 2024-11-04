@@ -64,4 +64,4 @@ jobs:
           pip install python-semantic-release==8.7.0
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          poetry run semantic-release publish
+          semantic-release -v publish
