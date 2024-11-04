@@ -16,10 +16,9 @@ python-semantic-release = '^7.32.2'
 branch = 'main'
 changelog_file = 'CHANGELOG.md'
 upload_to_pypi = false
-upload_to_release = true
+upload_to_release = false
 version_source = 'commit'
 version_toml = 'pyproject.toml:tool.poetry.version'
-build_command = "poetry build"
 
 [semantic_release.remote]
 token = { env = "GH_TOKEN" }
