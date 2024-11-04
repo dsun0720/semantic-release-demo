@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.0 (2024-11-04)
+
+### Feature
+
+* Add hello demo ([`8d31f7e`](https://github.com/dsun0720/semantic-release-demo/commit/8d31f7ef0dc17bdc89a24533eed2c9d2055a13f3))
+
 ## v0.1.3 (2024-11-04)
 ### Fix
 * Semantic release configuration 3 ([`a422b24`](https://github.com/dsun0720/semantic-release-demo/commit/a422b248ac58cea7db1a29f0b9c7689024a6d9e2))
