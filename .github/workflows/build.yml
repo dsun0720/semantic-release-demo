@@ -61,6 +61,8 @@ jobs:
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
       run: |
+        pip install python-semantic-release
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        poetry run semantic-release publish -v DEBUG
+        poetry run semantic-release -vv version
+        poetry run semantic-release -vv publish 
