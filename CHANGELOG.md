@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.10 (2024-11-21)
+
+### Bug Fixes
+
+- Publish artifects to release
+  ([`aef0821`](https://github.com/dsun0720/semantic-release-demo/commit/aef08210aebbf89e9ba285120789dae5538568d3))
+
+
 ## v0.3.9 (2024-11-21)
 
 ### Bug Fixes
