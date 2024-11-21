@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.6 (2024-11-21)
+
+### Bug Fixes
+
+- Git action config
+  ([`df2850f`](https://github.com/dsun0720/semantic-release-demo/commit/df2850f9c4a62f70622931aa5efc23bfcf3cce66))
+
+
 ## v0.3.5 (2024-11-21)
 
 ### Bug Fixes
