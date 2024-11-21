@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.8 (2024-11-21)
+
+### Bug Fixes
+
+- Bugfix in git action
+  ([`d13e3f6`](https://github.com/dsun0720/semantic-release-demo/commit/d13e3f6e6db9e0c66ef7330a7d18b72aca9cdfb2))
+
+
 ## v0.3.7 (2024-11-21)
 
 ### Bug Fixes
