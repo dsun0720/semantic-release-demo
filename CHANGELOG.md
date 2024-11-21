@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.11 (2024-11-21)
+
+### Bug Fixes
+
+- Use build_command
+  ([`ecd8ea0`](https://github.com/dsun0720/semantic-release-demo/commit/ecd8ea0eb4c6046e60ed776093a68344053d4e2c))
+
+
 ## v0.3.10 (2024-11-21)
 
 ### Bug Fixes
