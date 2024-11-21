@@ -10,14 +10,11 @@ packages = [{include = "demo"}]
 python = "^3.9"
 
 [tool.semantic_release]
-branch = 'main'
-changelog_file = 'CHANGELOG.md'
-upload_to_vcs_release = false
 version_toml = ["pyproject.toml:tool.poetry.version"]
 version_variables = ["demo/__init__.py:__version__"]
 
-[semantic_release.remote]
-token = { env = "GH_TOKEN" }
+[tool.semantic_release.publish]
+upload_to_vcs_release = false
 
 
 [build-system]

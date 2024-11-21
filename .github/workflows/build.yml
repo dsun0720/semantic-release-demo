@@ -54,9 +54,12 @@ jobs:
       run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
 
     - name: Install dependencies
-      run: poetry install
+      run: |
+        poetry lock --no-update
+        poetry install
 
-    - name: Python Semantic Release
+    - name: Semantic Release
+      id: release
       if: github.ref_name == 'main' && github.event_name == 'push'
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
@@ -64,5 +67,10 @@ jobs:
         pip install python-semantic-release
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        poetry run semantic-release -vv version
-        poetry run semantic-release -vv publish 
+        poetry run semantic-release -v version
+        poetry run semantic-release -v publish
+        echo "released='true'" >> "$GITHUB_OUTPUT" 
+    
+    - name: Publish package distributions to PyPI
+      if: steps.release.outputs.released == 'true'
+      run: echo "Publishing to PyPI"
