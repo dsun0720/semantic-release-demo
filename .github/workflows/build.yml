@@ -69,7 +69,7 @@ jobs:
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         poetry run semantic-release -v version
         poetry run semantic-release -v publish
-        echo "released='true'" >> "$GITHUB_OUTPUT" 
+        echo "released=true" >> "$GITHUB_OUTPUT" 
     
     - name: Publish package distributions to PyPI
       if: steps.release.outputs.released == 'true'
