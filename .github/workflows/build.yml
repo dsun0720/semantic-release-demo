@@ -58,18 +58,24 @@ jobs:
         poetry lock --no-update
         poetry install
 
-    - name: Semantic Release
+    # - name: Semantic Release
+    #   id: release
+    #   if: github.ref_name == 'main' && github.event_name == 'push'
+    #   env:
+    #     GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+    #   run: |
+    #     pip install python-semantic-release
+    #     git config user.name "${GITHUB_ACTOR}"
+    #     git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+    #     poetry run semantic-release -v version
+    #     poetry run semantic-release -v publish
+    #     echo "released=true" >> "$GITHUB_OUTPUT"
+    
+    - name: Python Semantic Release
       id: release
-      if: github.ref_name == 'main' && github.event_name == 'push'
-      env:
-        GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-      run: |
-        pip install python-semantic-release
-        git config user.name "${GITHUB_ACTOR}"
-        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        poetry run semantic-release -v version
-        poetry run semantic-release -v publish
-        echo "released=true" >> "$GITHUB_OUTPUT" 
+      uses: python-semantic-release/python-semantic-release@v9.14.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Publish package distributions to PyPI
       if: steps.release.outputs.released == 'true'
