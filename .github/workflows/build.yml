@@ -74,5 +74,4 @@ jobs:
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
       run: |
-        poetry build
         poetry run semantic-release -v publish
