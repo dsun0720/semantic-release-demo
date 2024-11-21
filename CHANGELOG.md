@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.9 (2024-11-21)
+
+### Bug Fixes
+
+- Just use semantic release version
+  ([`5c319fb`](https://github.com/dsun0720/semantic-release-demo/commit/5c319fb06559d57309a601fc09fd42b91e63b964))
+
+
 ## v0.3.8 (2024-11-21)
 
 ### Bug Fixes
