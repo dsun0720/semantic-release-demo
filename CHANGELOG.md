@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.7 (2024-11-21)
+
+### Bug Fixes
+
+- Use python-semantic-release@v9.14.0
+  ([`fcf0982`](https://github.com/dsun0720/semantic-release-demo/commit/fcf0982b77f8e5f8ac98162db63dd99237bc2f28))
+
+
 ## v0.3.6 (2024-11-21)
 
 ### Bug Fixes
